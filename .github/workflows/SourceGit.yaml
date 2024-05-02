@@ -3,7 +3,7 @@ name: Claim EpicGames from SourceGit
 on:
   workflow_dispatch:
   schedule:
-    - cron: "12 22 * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   setup:
@@ -18,7 +18,7 @@ jobs:
     - name: 初始化环境 & 拉取项目
       run: |
         sudo timedatectl set-timezone "Asia/Shanghai"
-        git clone https://github.com/GoGo35/epic.git epic
+        git clone https://github.com/QIN2DIM/epic-awesome-gamer epic
         cp epic/requirements.txt .
     - uses: actions/setup-python@v4
       with:
